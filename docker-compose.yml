@@ -25,12 +25,18 @@ services:
       KAFKA_NUM_PARTITIONS: 3
 
   kafka-connect:
-    image: confluentinc/cp-kafka-connect-base:7.5.0
+    image: confluentinc/cp-kafka-connect:7.5.0
     container_name: kafka-connect
     ports:
       - "8083:8083"
     depends_on:
       - kafka
+    command:
+      - bash
+      - -c
+      - |
+        cp /usr/share/java/kafka/connect-file-*.jar /etc/kafka-connect/plugins/ 2>/dev/null || true
+        /etc/confluent/docker/run
     environment:
       CONNECT_BOOTSTRAP_SERVERS: "kafka:9092"
       CONNECT_REST_ADVERTISED_HOST_NAME: "kafka-connect"
