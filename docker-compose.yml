@@ -25,7 +25,7 @@ services:
       KAFKA_NUM_PARTITIONS: 3
 
   kafka-connect:
-    image: confluentinc/cp-kafka-connect:7.5.0
+    image: confluentinc/cp-kafka-connect-base:7.5.0
     container_name: kafka-connect
     ports:
       - "8083:8083"
