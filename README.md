@@ -1,6 +1,6 @@
 # Kafka Streams & Connect 실습
 
-260429 BOAZ Kafka Streams & Connect 실습 레포
+BOAZ Kafka Streams & Connect 실습 레포
 
 ## 실습 환경
 
